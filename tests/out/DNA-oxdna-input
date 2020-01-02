@@ -7,7 +7,7 @@ sim_type = MD
 backend = CUDA
 backend_precision = mixed
 #debug = 1
-seed = 5383
+seed = 37891
 
 ##############################
 ####    SIM PARAMETERS    ####

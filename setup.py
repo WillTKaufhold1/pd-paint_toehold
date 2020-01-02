@@ -44,7 +44,7 @@ DNA_LENGTH = 3.4 # Angstroms per base rise
 d1_ssDNA = 15
 d1_toehold_length = 3
 d1_stem_length = 20 - d1_toehold_length
-d1_loop_length = 10
+d1_loop_length = 6
 
 d1 = Section('d1',np.array([0,0,0]), np.array([0,0,d1_num_bp*DNA_LENGTH]),num_bp = d1_num_bp)
 
@@ -56,9 +56,25 @@ d1_toehold = Section('s1_toehold',np.array([0,0,(d1_num_bp+d1_ssDNA+d1_toehold_l
 d1_stem = Section('s1_stem',np.array([0,0,(d1_num_bp+d1_ssDNA+d1_toehold_length+d1_stem_length)*DNA_LENGTH]),
                             np.array([0,0,(d1_num_bp+d1_ssDNA+d1_toehold_length)*DNA_LENGTH]),num_bp = d1_stem_length)
 
-d1_loop = Section('s1_loop', np.array([-d1_loop_length / 2.*DNA_LENGTH,0,(d1_num_bp+d1_ssDNA+d1_toehold_length+d1_stem_length)*DNA_LENGTH]),
-                             np.array([d1_loop_length / 2. *DNA_LENGTH,0,(d1_num_bp+d1_ssDNA+d1_toehold_length+d1_stem_length)*DNA_LENGTH]),
-                             num_bp = d1_loop_length,is_dsdna=False)
+
+
+#note how the d1 loop is initially curved!
+
+contour = np.linspace(0,1,10)
+## Make a circle
+x = np.sin(contour*2*np.pi)
+y = np.zeros(len(contour))
+z = np.cos(contour*2*np.pi) 
+coords = np.array( (x,y,z) ).T
+print(coords.shape)
+print(coords) # Print first to illustrate data layout
+dna_length = d1_loop_length*3.4
+path_length = 2*np.pi          # half circle
+coords = coords * (dna_length/path_length)
+coords[:,2] += (d1_num_bp+d1_ssDNA+d1_toehold_length+d1_stem_length)*DNA_LENGTH
+
+d1_loop = Section('s1_loop',None,None,num_bp = d1_loop_length,is_dsdna=False)
+
 
 #D5 segment
 Y = 100
@@ -74,16 +90,18 @@ d5_toehold = Section('s5_toehold',np.array([0,Y,(d5_num_bp+d1_ssDNA+d1_toehold_l
 d5_stem = Section('s5_stem',np.array([0,Y,(d5_num_bp+d1_ssDNA+d1_toehold_length+d1_stem_length)*DNA_LENGTH]),
                             np.array([0,Y,(d5_num_bp+d1_ssDNA+d1_toehold_length)*DNA_LENGTH]),num_bp = d1_stem_length)
 
-all_segs = [d1,d1_overhang,d1_toehold,d1_stem,d1_loop,d5,d5_overhang,d5_toehold,d5_stem]
+#all_segs = [d1,d1_overhang,d1_toehold,d1_stem,d1_loop,d5,d5_overhang,d5_toehold,d5_stem]
+all_segs = [d1,d1_overhang,d1_toehold,d1_stem,d1_loop]
 for i in all_segs: i.create_helix()
+
+all_segs[4].dna.set_splines(contour,coords)
 
 d1.dna.connect_end5(d1_overhang.dna.end3)
 d1_toehold.dna.connect_end3(d1_overhang.dna.start5)
 d1_stem.dna.connect_end3(d1_toehold.dna.start5)
-#d1_loop.dna.connect_start5(d1_stem.dna.start3)
-#d1_loop.dna.connect_end3(d1_stem.dna.start5)
+d1_loop.dna.connect_start5(d1_stem.dna.start3)
+d1_loop.dna.connect_end3(d1_stem.dna.start5)
 
-d5.dna.connect
 
 
 segs_list = [x.dna for x in all_segs]
