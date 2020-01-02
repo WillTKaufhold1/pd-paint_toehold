@@ -1,0 +1,34 @@
+INFO: seeding the RNG with 11558
+INFO: Initializing backend 
+INFO: Backend precision: double
+INFO: Simulation type: min
+INFO: The generator will try to take into account bonded interactions by choosing distances between bonded neighbours no larger than 2.000000
+INFO: Running Debye-Huckel at salt concentration =  0.5
+INFO: Using different widths for major and minor grooves
+INFO: pid: 3268
+INFO: Using a maximum backbone force of 5  (the corresponding mbf_xmax is 0.120156) and a far value of 0.04
+DEBUG: Debye-Huckel parameters: Q=0.054300, lambda_0=0.361646, lambda=0.503714, r_high=1.511142, cutoff=3.229510
+DEBUG: Debye-Huckel parameters: debye_huckel_RC=2.266713e+00, debye_huckel_B=3.133724e-03
+INFO: The Debye length at this temperature and salt concentration is 0.503714
+INFO: (Cells.cpp) N_cells_side: 8, 8, 8; rcut=3.22951, IS_MC: 0
+INFO: N: 216
+INFO: Using randomly distributed velocities
+INFO: Initial kinetic energy: 63.163421
+INFO: Using max step for minimization = 0.005
+INFO: SVN CODE VERSION: 6943M
+INFO: COMPILED ON: 09/02/19
+
+INFO: Total Running Time: 1.08165 s, per step: 1.08165 ms
+INFO: Timings, in seconds, by Timer (total, own, spent in children)
+> SimBackend                          1.082 (100.0%)        0.025 (  2.3%)        1.056 ( 97.7%)
+***> Lists                            0.118 ( 10.9%)        0.118 ( 10.9%)        0.000 (  0.0%)
+***> Thermostat                       0.000 (  0.0%)        0.000 (  0.0%)        0.000 (  0.0%)
+***> Forces                           0.938 ( 86.8%)        0.938 ( 86.8%)        0.000 (  0.0%)
+***> First Step                       0.000 (  0.0%)        0.000 (  0.0%)        0.000 (  0.0%)
+
+INFO: END OF THE SIMULATION, everything went OK!
+INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
+	  1.203 MB written to files
+	  0.000  B written to stdout/stderr
+	For a total of     1.11 MB/s
+

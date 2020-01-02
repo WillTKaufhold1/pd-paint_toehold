@@ -1,0 +1,4 @@
+sequence,force_side,stiff,x,y,z
+TTA TAC ATC TAT,5,10,0,0,0
+TTT TAG GTA AAT,5,10,0,8.5,0
+
