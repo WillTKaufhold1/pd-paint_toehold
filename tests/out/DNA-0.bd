@@ -1,0 +1,238 @@
+
+timestep 0.0002
+steps 10001
+numberFluct 0                   # deprecated
+
+interparticleForce 1            # other values deprecated
+fullLongRange 0                 # deprecated
+temperature 291
+
+outputPeriod 10000
+## Energy doesn't actually get printed!
+outputEnergyPeriod 10000
+outputFormat dcd
+
+## Infrequent domain decomposition because this kernel is still very slow
+decompPeriod 10000
+cutoff 50
+pairlistDistance 2
+
+origin -2500.0 -2500.0 -2500.0
+systemSize 5000 5000 5000
+
+
+
+
+particle D000
+num 3
+diffusion 52.12860405463512
+gridFile potentials/null.dx
+
+particle D001
+num 6
+diffusion 36.86048942082105
+gridFile potentials/null.dx
+
+particle D002
+num 1
+diffusion 35.71428536673677
+gridFile potentials/null.dx
+
+particle D003
+num 1
+diffusion 32.826607675173875
+gridFile potentials/null.dx
+
+particle D004
+num 6
+diffusion 38.57583836644647
+gridFile potentials/null.dx
+
+particle D005
+num 1
+diffusion 39.04344092623355
+gridFile potentials/null.dx
+
+particle D006
+num 5
+diffusion 36.466248614408215
+gridFile potentials/null.dx
+
+particle D007
+num 2
+diffusion 54.554473797740975
+gridFile potentials/null.dx
+
+particle S000
+num 1
+diffusion 52.24229787619945
+gridFile potentials/null.dx
+
+particle S001
+num 2
+diffusion 49.17107824023123
+gridFile potentials/null.dx
+
+particle S002
+num 2
+diffusion 58.36089855033988
+gridFile potentials/null.dx
+
+particle S003
+num 2
+diffusion 70.71067811865474
+gridFile potentials/null.dx
+
+particle S004
+num 2
+diffusion 50.0
+gridFile potentials/null.dx
+
+particle S005
+num 2
+diffusion 91.28709291752769
+gridFile potentials/null.dx
+
+## Input coordinates
+inputParticles DNA-0.particles.txt
+
+
+## Interaction potentials
+tabulatedPotential  1
+## The i@j@file syntax means particle type i will have NB interactions with particle type j using the potential in file
+tabulatedFile 0@0@potentials/DNA-0-nb.D000-D000.dat
+tabulatedFile 0@1@potentials/DNA-0-nb.D000-D001.dat
+tabulatedFile 0@2@potentials/DNA-0-nb.D000-D002.dat
+tabulatedFile 0@3@potentials/DNA-0-nb.D000-D003.dat
+tabulatedFile 0@4@potentials/DNA-0-nb.D000-D004.dat
+tabulatedFile 0@5@potentials/DNA-0-nb.D000-D005.dat
+tabulatedFile 0@6@potentials/DNA-0-nb.D000-D006.dat
+tabulatedFile 0@7@potentials/DNA-0-nb.D000-D007.dat
+tabulatedFile 0@8@potentials/DNA-0-nb.D000-S000.dat
+tabulatedFile 0@9@potentials/DNA-0-nb.D000-S001.dat
+tabulatedFile 0@10@potentials/DNA-0-nb.D000-S002.dat
+tabulatedFile 0@11@potentials/DNA-0-nb.D000-S003.dat
+tabulatedFile 0@12@potentials/DNA-0-nb.D000-S004.dat
+tabulatedFile 0@13@potentials/DNA-0-nb.D000-S005.dat
+tabulatedFile 1@1@potentials/DNA-0-nb.D001-D001.dat
+tabulatedFile 1@2@potentials/DNA-0-nb.D001-D002.dat
+tabulatedFile 1@3@potentials/DNA-0-nb.D001-D003.dat
+tabulatedFile 1@4@potentials/DNA-0-nb.D001-D004.dat
+tabulatedFile 1@5@potentials/DNA-0-nb.D001-D005.dat
+tabulatedFile 1@6@potentials/DNA-0-nb.D001-D006.dat
+tabulatedFile 1@7@potentials/DNA-0-nb.D001-D007.dat
+tabulatedFile 1@8@potentials/DNA-0-nb.D001-S000.dat
+tabulatedFile 1@9@potentials/DNA-0-nb.D001-S001.dat
+tabulatedFile 1@10@potentials/DNA-0-nb.D001-S002.dat
+tabulatedFile 1@11@potentials/DNA-0-nb.D001-S003.dat
+tabulatedFile 1@12@potentials/DNA-0-nb.D001-S004.dat
+tabulatedFile 1@13@potentials/DNA-0-nb.D001-S005.dat
+tabulatedFile 2@2@potentials/DNA-0-nb.D002-D002.dat
+tabulatedFile 2@3@potentials/DNA-0-nb.D002-D003.dat
+tabulatedFile 2@4@potentials/DNA-0-nb.D002-D004.dat
+tabulatedFile 2@5@potentials/DNA-0-nb.D002-D005.dat
+tabulatedFile 2@6@potentials/DNA-0-nb.D002-D006.dat
+tabulatedFile 2@7@potentials/DNA-0-nb.D002-D007.dat
+tabulatedFile 2@8@potentials/DNA-0-nb.D002-S000.dat
+tabulatedFile 2@9@potentials/DNA-0-nb.D002-S001.dat
+tabulatedFile 2@10@potentials/DNA-0-nb.D002-S002.dat
+tabulatedFile 2@11@potentials/DNA-0-nb.D002-S003.dat
+tabulatedFile 2@12@potentials/DNA-0-nb.D002-S004.dat
+tabulatedFile 2@13@potentials/DNA-0-nb.D002-S005.dat
+tabulatedFile 3@3@potentials/DNA-0-nb.D003-D003.dat
+tabulatedFile 3@4@potentials/DNA-0-nb.D003-D004.dat
+tabulatedFile 3@5@potentials/DNA-0-nb.D003-D005.dat
+tabulatedFile 3@6@potentials/DNA-0-nb.D003-D006.dat
+tabulatedFile 3@7@potentials/DNA-0-nb.D003-D007.dat
+tabulatedFile 3@8@potentials/DNA-0-nb.D003-S000.dat
+tabulatedFile 3@9@potentials/DNA-0-nb.D003-S001.dat
+tabulatedFile 3@10@potentials/DNA-0-nb.D003-S002.dat
+tabulatedFile 3@11@potentials/DNA-0-nb.D003-S003.dat
+tabulatedFile 3@12@potentials/DNA-0-nb.D003-S004.dat
+tabulatedFile 3@13@potentials/DNA-0-nb.D003-S005.dat
+tabulatedFile 4@4@potentials/DNA-0-nb.D004-D004.dat
+tabulatedFile 4@5@potentials/DNA-0-nb.D004-D005.dat
+tabulatedFile 4@6@potentials/DNA-0-nb.D004-D006.dat
+tabulatedFile 4@7@potentials/DNA-0-nb.D004-D007.dat
+tabulatedFile 4@8@potentials/DNA-0-nb.D004-S000.dat
+tabulatedFile 4@9@potentials/DNA-0-nb.D004-S001.dat
+tabulatedFile 4@10@potentials/DNA-0-nb.D004-S002.dat
+tabulatedFile 4@11@potentials/DNA-0-nb.D004-S003.dat
+tabulatedFile 4@12@potentials/DNA-0-nb.D004-S004.dat
+tabulatedFile 4@13@potentials/DNA-0-nb.D004-S005.dat
+tabulatedFile 5@5@potentials/DNA-0-nb.D005-D005.dat
+tabulatedFile 5@6@potentials/DNA-0-nb.D005-D006.dat
+tabulatedFile 5@7@potentials/DNA-0-nb.D005-D007.dat
+tabulatedFile 5@8@potentials/DNA-0-nb.D005-S000.dat
+tabulatedFile 5@9@potentials/DNA-0-nb.D005-S001.dat
+tabulatedFile 5@10@potentials/DNA-0-nb.D005-S002.dat
+tabulatedFile 5@11@potentials/DNA-0-nb.D005-S003.dat
+tabulatedFile 5@12@potentials/DNA-0-nb.D005-S004.dat
+tabulatedFile 5@13@potentials/DNA-0-nb.D005-S005.dat
+tabulatedFile 6@6@potentials/DNA-0-nb.D006-D006.dat
+tabulatedFile 6@7@potentials/DNA-0-nb.D006-D007.dat
+tabulatedFile 6@8@potentials/DNA-0-nb.D006-S000.dat
+tabulatedFile 6@9@potentials/DNA-0-nb.D006-S001.dat
+tabulatedFile 6@10@potentials/DNA-0-nb.D006-S002.dat
+tabulatedFile 6@11@potentials/DNA-0-nb.D006-S003.dat
+tabulatedFile 6@12@potentials/DNA-0-nb.D006-S004.dat
+tabulatedFile 6@13@potentials/DNA-0-nb.D006-S005.dat
+tabulatedFile 7@7@potentials/DNA-0-nb.D007-D007.dat
+tabulatedFile 7@8@potentials/DNA-0-nb.D007-S000.dat
+tabulatedFile 7@9@potentials/DNA-0-nb.D007-S001.dat
+tabulatedFile 7@10@potentials/DNA-0-nb.D007-S002.dat
+tabulatedFile 7@11@potentials/DNA-0-nb.D007-S003.dat
+tabulatedFile 7@12@potentials/DNA-0-nb.D007-S004.dat
+tabulatedFile 7@13@potentials/DNA-0-nb.D007-S005.dat
+tabulatedFile 8@8@potentials/DNA-0-nb.S000-S000.dat
+tabulatedFile 8@9@potentials/DNA-0-nb.S000-S001.dat
+tabulatedFile 8@10@potentials/DNA-0-nb.S000-S002.dat
+tabulatedFile 8@11@potentials/DNA-0-nb.S000-S003.dat
+tabulatedFile 8@12@potentials/DNA-0-nb.S000-S004.dat
+tabulatedFile 8@13@potentials/DNA-0-nb.S000-S005.dat
+tabulatedFile 9@9@potentials/DNA-0-nb.S001-S001.dat
+tabulatedFile 9@10@potentials/DNA-0-nb.S001-S002.dat
+tabulatedFile 9@11@potentials/DNA-0-nb.S001-S003.dat
+tabulatedFile 9@12@potentials/DNA-0-nb.S001-S004.dat
+tabulatedFile 9@13@potentials/DNA-0-nb.S001-S005.dat
+tabulatedFile 10@10@potentials/DNA-0-nb.S002-S002.dat
+tabulatedFile 10@11@potentials/DNA-0-nb.S002-S003.dat
+tabulatedFile 10@12@potentials/DNA-0-nb.S002-S004.dat
+tabulatedFile 10@13@potentials/DNA-0-nb.S002-S005.dat
+tabulatedFile 11@11@potentials/DNA-0-nb.S003-S003.dat
+tabulatedFile 11@12@potentials/DNA-0-nb.S003-S004.dat
+tabulatedFile 11@13@potentials/DNA-0-nb.S003-S005.dat
+tabulatedFile 12@12@potentials/DNA-0-nb.S004-S004.dat
+tabulatedFile 12@13@potentials/DNA-0-nb.S004-S005.dat
+tabulatedFile 13@13@potentials/DNA-0-nb.S005-S005.dat
+tabulatedBondFile potentials/gbond-0.901-15.980.dat
+tabulatedBondFile potentials/gbond-0.920-15.640.dat
+tabulatedBondFile potentials/wlcbond-9.600-12.000.dat
+tabulatedBondFile potentials/gbond-1.210-11.900.dat
+tabulatedBondFile potentials/wlcbond-35.224-12.000.dat
+tabulatedBondFile potentials/wlcbond-32.000-12.000.dat
+tabulatedBondFile potentials/wlcbond-23.488-12.000.dat
+tabulatedBondFile potentials/gbond-1.344-10.710.dat
+tabulatedBondFile potentials/wlcbond-33.088-12.000.dat
+tabulatedBondFile potentials/wlcbond-30.776-12.000.dat
+tabulatedBondFile potentials/gbond-1.008-14.280.dat
+tabulatedBondFile potentials/gbond-1.020-14.110.dat
+tabulatedBondFile potentials/gbond-0.847-17.000.dat
+tabulatedBondFile potentials/wlcbond-31.200-12.000.dat
+tabulatedBondFile potentials/gbond-1.227-11.730.dat
+tabulatedBondFile potentials/gbond-0.891-16.150.dat
+tabulatedBondFile potentials/wlcbond-33.304-12.000.dat
+tabulatedBondFile potentials/wlcbond-24.000-12.000.dat
+tabulatedAngleFile potentials/angle-20.292-180.000.dat
+tabulatedAngleFile potentials/angle-17.688-180.000.dat
+tabulatedAngleFile potentials/angle-20.669-180.000.dat
+tabulatedAngleFile potentials/angle-22.650-180.000.dat
+tabulatedAngleFile potentials/wlcangle-28.000-12.000.dat
+tabulatedAngleFile potentials/angle-17.782-180.000.dat
+tabulatedAngleFile potentials/angle-19.926-180.000.dat
+tabulatedAngleFile potentials/wlcangle-32.144-12.000.dat
+tabulatedAngleFile potentials/angle-19.806-180.000.dat
+tabulatedAngleFile potentials/angle-18.075-180.000.dat
+inputBonds potentials/DNA-0.bonds.txt
+inputAngles potentials/DNA-0.angles.txt
+inputExcludes potentials/DNA-0.exculsions.txt
