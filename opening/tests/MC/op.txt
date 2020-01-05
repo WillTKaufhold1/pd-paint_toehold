@@ -1,0 +1,92 @@
+{
+order_parameter = bond 
+name = bonds_s1s1
+pair1 = 73, 66
+pair2 = 74, 65
+pair3 = 75, 64
+pair4 = 76, 63
+pair5 = 77, 62
+pair6 = 78, 61
+pair7 = 79, 60
+pair8 = 80, 59
+pair9 = 81, 58
+pair10 = 82, 57
+pair11 = 83, 56
+pair12 = 84, 55
+pair13 = 85, 54
+pair14 = 86, 53
+pair15 = 87, 52
+pair16 = 88, 51
+pair17 = 89, 50
+}
+{
+order_parameter = bond 
+name = bonds_s1s2
+pair1 = 93, 66
+pair2 = 94, 65
+pair3 = 95, 64
+pair4 = 96, 63
+pair5 = 97, 62
+pair6 = 98, 61
+pair7 = 99, 60
+pair8 = 100, 59
+pair9 = 101, 58
+pair10 = 102, 57
+pair11 = 103, 56
+pair12 = 104, 55
+pair13 = 105, 54
+pair14 = 106, 53
+pair15 = 107, 52
+pair16 = 108, 51
+pair17 = 109, 50
+pair18 = 110, 49
+pair19 = 111, 48
+pair20 = 112, 47
+}
+{
+order_parameter = mindistance 
+name = dist_s1s1
+pair1 = 73, 66
+pair2 = 74, 65
+pair3 = 75, 64
+pair4 = 76, 63
+pair5 = 77, 62
+pair6 = 78, 61
+pair7 = 79, 60
+pair8 = 80, 59
+pair9 = 81, 58
+pair10 = 82, 57
+pair11 = 83, 56
+pair12 = 84, 55
+pair13 = 85, 54
+pair14 = 86, 53
+pair15 = 87, 52
+pair16 = 88, 51
+pair17 = 89, 50
+interfaces = 1,2,4,8
+}
+{
+order_parameter = mindistance 
+name = dist_s1s2
+pair1 = 93, 66
+pair2 = 94, 65
+pair3 = 95, 64
+pair4 = 96, 63
+pair5 = 97, 62
+pair6 = 98, 61
+pair7 = 99, 60
+pair8 = 100, 59
+pair9 = 101, 58
+pair10 = 102, 57
+pair11 = 103, 56
+pair12 = 104, 55
+pair13 = 105, 54
+pair14 = 106, 53
+pair15 = 107, 52
+pair16 = 108, 51
+pair17 = 109, 50
+pair18 = 110, 49
+pair19 = 111, 48
+pair20 = 112, 47
+interfaces = 1,2,4,8
+}

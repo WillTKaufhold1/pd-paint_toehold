@@ -30,11 +30,23 @@ class Force:
 
 
 class Domain:
-    def __init__(self,pairs):
+    def __init__(self,pairs,domain_name):
         self.pairs = list(pairs)
+        self.domain_name = domain_name
     def get_dist_string(self):
+        dist_string = "{\norder_parameter = mindistance \nname = dist_%s\n"%(self.domain_name,)
+        for index,(i,j) in enumerate(self.pairs):
+            dist_string += "pair%s = %s, %s\n"%(index+1,i,j)
+        dist_string += "interfaces = 1,2,4,8\n"
+        dist_string += '}\n'
+        return dist_string
 
     def get_bonds_string(self):
+        dist_string = "{\norder_parameter = bond \nname = bonds_%s\n"%(self.domain_name,)
+        for index,(i,j) in enumerate(self.pairs):
+            dist_string += "pair%s = %s, %s\n"%(index+1,i,j)
+        dist_string += '}\n'
+        return dist_string
 
 
 parser = get_parser()
@@ -57,6 +69,8 @@ def apply_forces(forces,top):
             index = re.search(seq,oxdna_seq).end()
         elif forces.iloc[i]['force_side'] == 3:
             index = re.search(seq,oxdna_seq).start()
+            #ah, there's a bit problem here!
+        breakpoint()
 
         Forces.append(Force(index,forces.iloc[i]['x'],
                                 forces.iloc[i]['y'],
@@ -104,13 +118,31 @@ def apply_opfile(op,top,toehold=0):
         
         assert(len(range(seq_A_m.start(),seq_A_m.end())) == len(range(seq_B_m.start(),  seq_B_m.end())[::-1]))
 
-        Domains.append(Domain(pairs))
+        Domains.append(Domain(pairs,op.iloc[i]['name']))
 
-    breakpoint()
+    with open("op","w+") as f:
+        for domain in Domains:
+            f.write(domain.get_bonds_string())
+        for domain in Domains:
+            f.write(domain.get_dist_string())
 
+    return Domains
+
+
+def apply_wfile(domains,top):
+    #N.B: we have five distance interfaces...
+    #is there a way to combine GPU and CPU simualtion here?
+    wfile_string = ""
+    for b1 in range(len(domains[0].pairs)+1):
+        for b2 in range(len(domains[1].pairs)+1):
+                for d1 in range(5):
+                    for d2 in range(5):
+                        wfile_string += "%s %s %s %s %s\n"%(b1,b2,d1,d2,1)
+    with open("wfile","w+") as f: f.write(wfile_string)
 
 toehold = 3
-#apply_forces(forces,top)
-apply_opfile(op,top,toehold)
+apply_forces(forces,top)
+domains = apply_opfile(op,top,toehold)
+apply_wfile(domains,top)
 
 #now to define the order parameter...

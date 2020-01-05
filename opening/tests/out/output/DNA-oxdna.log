@@ -1,4 +1,4 @@
-INFO: seeding the RNG with 39239
+INFO: seeding the RNG with 75141
 INFO: Initializing backend 
 INFO: Backend precision: mixed
 INFO: Simulation type: MD
@@ -8,7 +8,7 @@ INFO: Using different widths for major and minor grooves
 INFO: CUDA device not specified
 INFO: CUDA sort_every not specified, using 0
 INFO: The generator will try to take into account bonded interactions by choosing distances between bonded neighbours no larger than 2.000000
-INFO: pid: 3281
+INFO: pid: 21131
 INFO: Using a maximum backbone force of 5  (the corresponding mbf_xmax is 0.120156) and a far value of 0.04
 DEBUG: Debye-Huckel parameters: Q=0.054300, lambda_0=0.361645, lambda=0.503714, r_high=1.511142, cutoff=3.229510
 DEBUG: Debye-Huckel parameters: debye_huckel_RC=2.266712e+00, debye_huckel_B=3.133725e-03
@@ -16,7 +16,7 @@ INFO: The Debye length at this temperature and salt concentration is 0.503714
 INFO: (Cells.cpp) N_cells_side: 8, 8, 8; rcut=3.22951, IS_MC: 0
 INFO: N: 216
 INFO: Using randomly distributed velocities
-INFO: Initial kinetic energy: 59.120869
+INFO: Initial kinetic energy: 60.998501
 INFO: Choosing device automatically
 INFO: Computer has 1 devices
 INFO:  - Trying device 0
@@ -28,20 +28,22 @@ INFO: threads_per_block was not specified or set to 0. The default value (64) wi
 INFO: Allocated CUDA memory: 0.04 MBs
 INFO: SVN CODE VERSION: 6943M
 INFO: COMPILED ON: 09/02/19
+INFO: Fix diffusion went too far... -284.052, -284.05, 0, (0.00143433>0.000284052)
+INFO:  *** Fix diffusion hopeless... -284.052, -284.051, 0, (0.000549316>0.000284052)
 
-INFO: Total Running Time: 0.39357 s, per step: 0.39357 ms
+INFO: Total Running Time: 41.1275 s, per step: 0.411275 ms
 INFO: Timings, in seconds, by Timer (total, own, spent in children)
-> SimBackend                          0.394 (100.0%)        0.006 (  1.5%)        0.388 ( 98.5%)
-***> Hilbert sorting                  0.003 (  0.7%)        0.003 (  0.7%)        0.000 (  0.0%)
-***> Lists                            0.005 (  1.2%)        0.005 (  1.2%)        0.000 (  0.0%)
-***> Thermostat                       0.005 (  1.2%)        0.005 (  1.2%)        0.000 (  0.0%)
-***> Forces                           0.359 ( 91.2%)        0.359 ( 91.2%)        0.000 (  0.0%)
-***> First Step                       0.017 (  4.2%)        0.017 (  4.2%)        0.000 (  0.0%)
+> SimBackend                         41.127 (100.0%)        0.598 (  1.5%)       40.529 ( 98.5%)
+***> Hilbert sorting                  0.271 (  0.7%)        0.271 (  0.7%)        0.000 (  0.0%)
+***> Lists                            0.477 (  1.2%)        0.477 (  1.2%)        0.000 (  0.0%)
+***> Thermostat                       0.509 (  1.2%)        0.509 (  1.2%)        0.000 (  0.0%)
+***> Forces                          36.348 ( 88.4%)       36.348 ( 88.4%)        0.000 (  0.0%)
+***> First Step                       2.924 (  7.1%)        2.924 (  7.1%)        0.000 (  0.0%)
 
 INFO: END OF THE SIMULATION, everything went OK!
-INFO: Lists updated 1000 times (every ~1.000000 steps)
+INFO: Lists updated 100000 times (every ~1.000000 steps)
 INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
-	 58.107 KB written to files
+	  1.187 MB written to files
 	  0.000  B written to stdout/stderr
-	For a total of    0.144 MB/s
+	For a total of   0.0289 MB/s
 

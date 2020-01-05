@@ -7,7 +7,7 @@ sim_type = min
 backend = CPU
 backend_precision = double
 #debug = 1
-seed = 11558
+seed = 82486
 
 ##############################
 ####    SIM PARAMETERS    ####

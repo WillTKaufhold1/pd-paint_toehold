@@ -1,0 +1,16 @@
+{
+type=trap
+particle=188
+pos0=0,0.0,0
+stiff=10
+rate=0
+dir=1.,0.,0.
+}
+{
+type=trap
+particle=216
+pos0=0,8.5,0
+stiff=10
+rate=0
+dir=1.,0.,0.
+}
